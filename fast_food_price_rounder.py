@@ -1,21 +1,14 @@
 from num2words import num2words
 
-food01 = float(input("Food Price: "))
-food02 = float(input("Food Price: "))
-food03 = float(input("Food Price: "))
+price01 = float(input("1-mahsulot: "))
+price02 = float(input("2-mahsulot: "))
+price03 = float(input("3-mahsulot: "))
 
-price = round(food01 + food02 + food03, 1)
+total_price = round(price01 + price02 + price03, 2)
+rounded_price = round(total_price, 1)
 
-words_en = num2words(
-    price, 
-    to='currency', 
-    currency='USD'
-)
-words_ru = num2words(
-    price, 
-    lang='ru', 
-    to='currency', 
-    currency='USD'
-)
+print("Umumiy narx: $", total_price)
+print(num2words(int(total_price)), num2words(int(total_price), lang='ru'))
 
-print(price, words_en, words_ru)
+print("Yaxlitlangan narx: $", rounded_price)
+print(num2words(int(rounded_price)), num2words(int(rounded_price), lang='ru'))
